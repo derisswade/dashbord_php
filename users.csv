@@ -1,0 +1,4 @@
+email,password,role
+admin@example.com,password,admin
+apprenant1@example.com,apprenantpassword,apprenant
+apprenant2@example.com,apprenantpassword,apprenant

@@ -1,0 +1,52 @@
+<?php
+// Définition de la fonction csv_to_array
+require_once '../config/bootstrap.php';
+require_once '../config/helpers.php';
+// Vérification si le formulaire a été soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupération des données du formulaire
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Chemin vers le fichier CSV
+    $csvFile = '/var/www/html/projet/users.csv';
+
+    // Utilisation de la fonction csv_to_array pour récupérer les données du fichier CSV
+    $users = lireCSV($csvFile);
+
+   /*  dd($users); */
+
+    // Vérification des informations dans le tableau des utilisateurs
+    $loggedIn = false;
+    $role = '';
+    
+    foreach ($users as $user) {
+        // Vérification des informations de connexion
+        if ( trim($user[0]) == trim($email)&& trim($user[1]) == trim($password) ) {
+            $loggedIn = true;
+            
+            $role = $user[2]; // Récupération du rôle
+            
+            break;
+
+        }
+    }
+    /*                                                                                                                                                                                                                                                                                                                                                                                 */
+    // Redirection si la connexion réussit
+    if ($loggedIn) {
+        // Redirection en fonction du rôle
+        if ($role == "admin") {
+            header("Location: http://www.idrissawade.com:8080/promo?id=6");
+            exit;
+        } elseif ($role == "apprenant") {
+            header("Location: http://www.idrissawade.com:8080/apprenant?idpromo=6");
+            exit;
+        } else {
+            echo "Rôle invalide.";
+        }
+    } else {
+        // Affichage d'un message d'erreur si la connexion échoue
+        header("location: ../templates/error.html");
+    }
+}
+?>

@@ -1,0 +1,10 @@
+[
+    {
+        "username": "deriss@exemple.com",
+        "password": "$2y$10$G9Vg4cehgVpeNHv0jREc9uwsRNwS\/hots9ZKfMQB6naOZrs1dbKba"
+    },
+    {
+        "username": "admin@example.com",
+        "password": "$2y$10$bMRo6vTDfPcQnWgYZJWlWONKRrFEs.btiRrRDNfKbBMgIdB4pUOhC"
+    }
+]

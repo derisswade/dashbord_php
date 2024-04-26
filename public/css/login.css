@@ -1,0 +1,182 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+    }
+
+    body {
+        background-color: rgba(11, 20, 26, 0.08);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo {
+        position: absolute;
+        top: 150px;
+        left: 33%;
+    }
+
+    img {
+        width: 15vw;
+        height: 5vh;
+        max-width: 200px;
+        max-height: 150px;
+    }
+
+    .details::after {
+        content: " * ";
+        color: red;
+        font-size: 0.9em;
+    }
+
+    .input-box::placeholder::after {
+        content: " * ";
+        color: red;
+        font-size: 0.9em;
+    }
+
+    .user-details {
+        background-color: white;
+        max-width: 800px;
+        width: 80vw;
+        border-radius: 5px;
+        padding: 25px 30px;
+        font-size: 0.8rem;
+    }
+
+    form .user-details .input-box {
+        margin: 20px 0 12px 0;
+        width: 100%;
+        position: relative;
+    }
+
+    .user-details .input-box .details {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    .user-details .input-box input {
+        height: 45px;
+        width: 100%;
+        border-radius: 7px;
+        outline: none;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        border-bottom-width: 2px;
+        transition: all 0.3 ease;
+    }
+
+    .user-details .input-box input:focus,
+    .user-details .input-box input:valid {
+        border-color: darkgrey;
+    }
+
+
+    .foo {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px 0 12px 0;
+        font-size: 0.7rem;
+    }
+
+    .container .foo .passwordForget {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: absolute;
+        left: 64%;
+    }
+
+    a {
+        color: #00a884;
+    }
+
+    form .button {
+        height: 45px;
+        margin: 45px 0;
+        position: relative;
+    }
+
+
+    form .button input {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        background-color: #00a884;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    form .button input:hover {
+        cursor: pointer;
+        background-color: green;
+    }
+
+    #show_hide_pwd {
+
+        display: none;
+    }
+
+    .show_hide_label {
+        position: absolute;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        width: 10%;
+        top: 27px;
+        right: 2px;
+        background-color: white;
+        box-shadow: -4px 0 6px -2px #fff,
+            inset 0 4px 2px #fff,
+            inset 0 -4px 2px #fff;
+        border-radius: 0 8px 8px 0;
+    }
+
+
+    #show_hide_pwd:checked+label {
+        box-shadow: inset 0 4px 2px #fff,
+            inset 4 -4px 2px #fff;
+    }
+
+    .show_hide_label:before {
+        content: '';
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        --eyecolor: darkgrey;
+        background: radial-gradient(circle, transparent 50%, var(--eyecolor) 50%) no-repeat center,
+            radial-gradient(circle, var(--eyecolor) 32%, transparent 32%) no-repeat center;
+        border-radius: 0 50%;
+        transform: rotate(-45deg);
+        transition: all linear 0.3s;
+    }
+
+    #show_hide_pwd:checked+label:before {
+        height: 14px;
+        width: 14px;
+        --eyecolor: black;
+        filter: drop-shadow(0 0 6px lightgray)
+    }
+
+    #show_hide_pwd:not(:checked)~#password {
+        font-size: 0.8rem;
+        -webkit-text-security: disc;
+    }
+    p.error{
+        color: red;
+        font-size: 0.8rem;
+    }
+    p.success {
+        color: green;
+        font-size: 0.8rem;
+    }
